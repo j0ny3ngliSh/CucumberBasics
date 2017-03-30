@@ -15,7 +15,7 @@ public class Hook extends BaseUtil{
 
     @Before
     public void initializeTest(){
-        System.out.println("Opening the browser: MOCK /\n");
+        System.out.println("Opening the browser: MOCK\n");
 
         //Passing a dummy WebDriver instance
         base.stepInfo = "Firefox driver";

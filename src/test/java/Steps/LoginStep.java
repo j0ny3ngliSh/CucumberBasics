@@ -37,7 +37,7 @@ public class LoginStep extends BaseUtil{
 
     @And("^I enter the following for Login$")
     public void iEnterTheFollowingForLogin(DataTable table) throws Throwable {
-        List<User> users = new ArrayList<User>();
+        List<User> users;
         users = table.asList(User.class);
 
         for(User user: users){
@@ -53,8 +53,8 @@ public class LoginStep extends BaseUtil{
     }
 
     public class User{
-        public String username;
-        public String password;
+        private String username;
+        private String password;
 
         public User(String username, String password){
             this.username = username;
