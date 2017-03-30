@@ -1,8 +1,10 @@
 package Steps;
 
 import Base.BaseUtil;
+import Transformation.EmailTransform;
 import cucumber.api.DataTable;
 import cucumber.api.PendingException;
+import cucumber.api.Transform;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -50,6 +52,11 @@ public class LoginStep extends BaseUtil{
     @And("^I enter ([^\"]*) and ([^\"]*)$")
     public void iEnterUsernameAndPassword(String username, String password) throws Throwable {
 
+    }
+
+    @And("^I enter the users email address Email:([^\"]*)$")
+    public void iEnterTheUsersEmailAddressEmailAdmin(@Transform(EmailTransform.class) String email) throws Throwable {
+        System.out.println((String.format("The email is: %s \n", email)));
     }
 
     public class User{
